@@ -17,6 +17,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1080
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 1080: extern volatile unsigned char CCPR2L __attribute__((address(0x01B)));
 [v _CCPR2L `Vuc ~T0 @X0 0 e@27 ]
+"2482
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2482: extern volatile __bit CHS0 __attribute__((address(0xFB)));
+[v _CHS0 `Vb ~T0 @X0 0 e@251 ]
+"2485
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2485: extern volatile __bit CHS1 __attribute__((address(0xFC)));
+[v _CHS1 `Vb ~T0 @X0 0 e@252 ]
+"2488
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2488: extern volatile __bit CHS2 __attribute__((address(0xFD)));
+[v _CHS2 `Vb ~T0 @X0 0 e@253 ]
+"2404
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2404: extern volatile __bit ADON __attribute__((address(0xF8)));
+[v _ADON `Vb ~T0 @X0 0 e@248 ]
+[v F842 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
+[v __delay `JF842 ~T0 @X0 0 e ]
+[p i __delay ]
+"2578 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2578: extern volatile __bit GO_nDONE __attribute__((address(0xFA)));
+[v _GO_nDONE `Vb ~T0 @X0 0 e@250 ]
+"2222
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2222: extern volatile unsigned char ADRESL __attribute__((address(0x09E)));
+[v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
+"1152
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 1152: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
 [p mainexit ]
 "2962
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2962: extern volatile __bit TRISC1 __attribute__((address(0x439)));
@@ -24,6 +49,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2965
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2965: extern volatile __bit TRISC2 __attribute__((address(0x43A)));
 [v _TRISC2 `Vb ~T0 @X0 0 e@1082 ]
+"2229
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2229: extern volatile unsigned char ADCON1 __attribute__((address(0x09F)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
+"2383
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2383: extern volatile __bit ADCS0 __attribute__((address(0xFE)));
+[v _ADCS0 `Vb ~T0 @X0 0 e@254 ]
+"2386
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2386: extern volatile __bit ADCS1 __attribute__((address(0xFF)));
+[v _ADCS1 `Vb ~T0 @X0 0 e@255 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -205,109 +239,179 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "3 batch.c
-[; ;batch.c: 3:         CCP1CON = 0x0F;
+[; ;batch.c: 3: 
 [p x FOSC  =  HS         ]
 "4
-[; ;batch.c: 4:         float periodt = 1/freq;
+[; ;batch.c: 4: float battery_current, feedback_voltage;
 [p x WDTE  =  OFF        ]
 "5
-[; ;batch.c: 5:         PR2 = (periodt * 20000000) / 16 - 1;
+[; ;batch.c: 5: 
 [p x PWRTE  =  OFF       ]
 "6
-[; ;batch.c: 6:         CCPR1L = duty;
+[; ;batch.c: 6:  void startPWM1(float freq, int duty){
 [p x BOREN  =  OFF      ]
 "7
-[; ;batch.c: 7:         TMR2ON = 1;
+[; ;batch.c: 7:         CCP1CON = 0x0F;
 [p x LVP  =  OFF         ]
 "8
-[; ;batch.c: 8:     }
+[; ;batch.c: 8:         float periodt = 1.0/freq;
 [p x CPD  =  OFF         ]
 "9
-[; ;batch.c: 9:  void startPWM2(float freq, int duty){
+[; ;batch.c: 9:         PR2 = (periodt * 20000000) / 16 - 1;
 [p x WRT  =  OFF          ]
 "10
-[; ;batch.c: 10:         CCP2CON = 0x0F;
+[; ;batch.c: 10:         CCPR1L = duty;
 [p x CP  =  OFF    ]
-"14
-[; ;batch.c: 14:         TMR2ON = 1;
+"16
+[; ;batch.c: 16:         PR2 = (periodt * 20000000) / 16 - 1;
+[v _battery_current `f ~T0 @X0 1 e ]
+[v _feedback_voltage `f ~T0 @X0 1 e ]
+"18
+[; ;batch.c: 18:         TMR2ON = 1;
 [v _startPWM1 `(v ~T0 @X0 1 ef2`f`i ]
 {
 [e :U _startPWM1 ]
 [v _freq `f ~T0 @X0 1 r1 ]
 [v _duty `i ~T0 @X0 1 r2 ]
 [f ]
-"15
-[; ;batch.c: 15:     }
-[e = _CCP1CON -> -> 15 `i `uc ]
-"16
-[; ;batch.c: 16: 
-[v _periodt `f ~T0 @X0 1 a ]
-[e = _periodt / -> -> 1 `i `f _freq ]
-"17
-[; ;batch.c: 17: void main(void) {
-[e = _PR2 -> - / * _periodt -> -> 20000000 `l `f -> -> 16 `i `f -> -> 1 `i `f `uc ]
-"18
-[; ;batch.c: 18:     TRISC1 = 0;
-[e = _CCPR1L -> _duty `uc ]
 "19
-[; ;batch.c: 19:     TRISC2 = 0;
-[e = _TMR2ON -> -> 1 `i `b ]
+[; ;batch.c: 19:     }
+[e = _CCP1CON -> -> 15 `i `uc ]
 "20
-[; ;batch.c: 20: 
+[; ;batch.c: 20:  int readADC(char ADCpin){
+[v _periodt `f ~T0 @X0 1 a ]
+[e = _periodt -> / .1.0 -> _freq `d `f ]
+"21
+[; ;batch.c: 21:      CHS0 = ADCpin & 001;
+[e = _PR2 -> - / * _periodt -> -> 20000000 `l `f -> -> 16 `i `f -> -> 1 `i `f `uc ]
+"22
+[; ;batch.c: 22:      CHS1 = ADCpin & 010;
+[e = _CCPR1L -> _duty `uc ]
+"23
+[; ;batch.c: 23:      CHS2 = ADCpin & 100;
+[e = _TMR2ON -> -> 1 `i `b ]
+"24
+[; ;batch.c: 24:      ADON = 1;
 [e :UE 95 ]
 }
-"21
-[; ;batch.c: 21:     while(1){
+"25
+[; ;batch.c: 25:      _delay((unsigned long)((40)*(20000000/4000000.0)));
 [v _startPWM2 `(v ~T0 @X0 1 ef2`f`i ]
 {
 [e :U _startPWM2 ]
 [v _freq `f ~T0 @X0 1 r1 ]
 [v _duty `i ~T0 @X0 1 r2 ]
 [f ]
-"22
-[; ;batch.c: 22:         startPWM1(5000, 90);
-[e = _CCP2CON -> -> 15 `i `uc ]
-"23
-[; ;batch.c: 23:         startPWM2(1000, 30);
-[v _periodt `f ~T0 @X0 1 a ]
-[e = _periodt / -> -> 1 `i `f _freq ]
-"24
-[; ;batch.c: 24:     }
-[e = _PR2 -> - / * _periodt -> -> 20000000 `l `f -> -> 16 `i `f -> -> 1 `i `f `uc ]
-"25
-[; ;batch.c: 25: 
-[e = _CCPR2L -> _duty `uc ]
 "26
-[; ;batch.c: 26:     return;
-[e = _TMR2ON -> -> 1 `i `b ]
+[; ;batch.c: 26:      GO_nDONE = 1;
+[e = _CCP2CON -> -> 15 `i `uc ]
 "27
-[; ;batch.c: 27: }
+[; ;batch.c: 27:      while(GO_nDONE);
+[v _periodt `f ~T0 @X0 1 a ]
+[e = _periodt -> / .1.0 -> _freq `d `f ]
+"28
+[; ;batch.c: 28:      ADON = 0;
+[e = _PR2 -> - / * _periodt -> -> 20000000 `l `f -> -> 16 `i `f -> -> 1 `i `f `uc ]
+"29
+[; ;batch.c: 29:     int res = ADRESL + 128* ADRESH;
+[e = _CCPR2L -> _duty `uc ]
+"30
+[; ;batch.c: 30:     return res;
+[e = _TMR2ON -> -> 1 `i `b ]
+"31
+[; ;batch.c: 31:  }
 [e :UE 96 ]
 }
+"32
+[; ;batch.c: 32: void main(void) {
+[v _readADC `(i ~T0 @X0 1 ef1`uc ]
+{
+[e :U _readADC ]
+[v _ADCpin `uc ~T0 @X0 1 r1 ]
+[f ]
+"33
+[; ;batch.c: 33:     TRISC1 = 0;
+[e = _CHS0 -> & -> _ADCpin `i -> 1 `i `b ]
+"34
+[; ;batch.c: 34:     TRISC2 = 0;
+[e = _CHS1 -> & -> _ADCpin `i -> 8 `i `b ]
+"35
+[; ;batch.c: 35:     ADCON1 = 0b01000010;
+[e = _CHS2 -> & -> _ADCpin `i -> 100 `i `b ]
+"36
+[; ;batch.c: 36:     ADCS0 = 0;
+[e = _ADON -> -> 1 `i `b ]
+"37
+[; ;batch.c: 37:     ADCS1 = 0;
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"38
+[; ;batch.c: 38: 
+[e = _GO_nDONE -> -> 1 `i `b ]
+"39
+[; ;batch.c: 39: 
+[e $U 98  ]
+[e :U 99 ]
+[e :U 98 ]
+[e $ _GO_nDONE 99  ]
+[e :U 100 ]
+"40
+[; ;batch.c: 40:     while(1){
+[e = _ADON -> -> 0 `i `b ]
+"41
+[; ;batch.c: 41: 
+[v _res `i ~T0 @X0 1 a ]
+[e = _res + -> _ADRESL `i * -> 128 `i -> _ADRESH `i ]
+"42
+[; ;batch.c: 42: 
+[e ) _res ]
+[e $UE 97  ]
+"43
+[; ;batch.c: 43:         startPWM1(5000, 90);
+[e :UE 97 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"29
+"44
+[; ;batch.c: 44:         startPWM2(1000, 30);
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"30
+"45
+[; ;batch.c: 45: 
 [e = _TRISC1 -> -> 0 `i `b ]
-"31
+"46
+[; ;batch.c: 46:         battery_current = 0.00488 * readADC(1);
 [e = _TRISC2 -> -> 0 `i `b ]
-"33
-[e :U 99 ]
+"47
+[; ;batch.c: 47:         feedback_voltage =5.55* (0.00488 * readADC(2));
+[e = _ADCON1 -> -> 66 `i `uc ]
+"48
+[; ;batch.c: 48: 
+[e = _ADCS0 -> -> 0 `i `b ]
+"49
+[; ;batch.c: 49: 
+[e = _ADCS1 -> -> 0 `i `b ]
+"52
+[; ;batch.c: 52: 
+[e :U 103 ]
 {
-"34
+"55
+[; ;batch.c: 55:     return;
 [e ( _startPWM1 (2 , -> -> 5000 `i `f -> 90 `i ]
-"35
+"56
+[; ;batch.c: 56: }
 [e ( _startPWM2 (2 , -> -> 1000 `i `f -> 30 `i ]
-"36
+"58
+[e = _battery_current -> * .0.00488 -> ( _readADC (1 -> -> 1 `i `uc `d `f ]
+"59
+[e = _feedback_voltage -> * .5.55 * .0.00488 -> ( _readADC (1 -> -> 2 `i `uc `d `f ]
+"65
 }
-[e :U 98 ]
-[e $U 99  ]
-[e :U 100 ]
-"38
-[e $UE 97  ]
-"39
-[e :UE 97 ]
+[e :U 102 ]
+[e $U 103  ]
+[e :U 104 ]
+"67
+[e $UE 101  ]
+"68
+[e :UE 101 ]
 }

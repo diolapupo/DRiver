@@ -1730,28 +1730,57 @@ extern __bank0 __bit __timeout;
 
 
 
+
+
+float battery_current, feedback_voltage;
+
  void startPWM1(float freq, int duty){
         CCP1CON = 0x0F;
-        float periodt = 1/freq;
+        float periodt = 1.0/freq;
         PR2 = (periodt * 20000000) / 16 - 1;
         CCPR1L = duty;
         TMR2ON = 1;
     }
  void startPWM2(float freq, int duty){
         CCP2CON = 0x0F;
-        float periodt = 1/freq;
+        float periodt = 1.0/freq;
         PR2 = (periodt * 20000000) / 16 - 1;
         CCPR2L = duty;
         TMR2ON = 1;
     }
-
+ int readADC(char ADCpin){
+     CHS0 = ADCpin & 001;
+     CHS1 = ADCpin & 010;
+     CHS2 = ADCpin & 100;
+     ADON = 1;
+     _delay((unsigned long)((40)*(20000000/4000000.0)));
+     GO_nDONE = 1;
+     while(GO_nDONE);
+     ADON = 0;
+    int res = ADRESL + 128* ADRESH;
+    return res;
+ }
 void main(void) {
     TRISC1 = 0;
     TRISC2 = 0;
+    ADCON1 = 0b01000010;
+    ADCS0 = 0;
+    ADCS1 = 0;
+
 
     while(1){
+
+
         startPWM1(5000, 90);
         startPWM2(1000, 30);
+
+        battery_current = 0.00488 * readADC(1);
+        feedback_voltage =5.55* (0.00488 * readADC(2));
+
+
+
+
+
     }
 
     return;
