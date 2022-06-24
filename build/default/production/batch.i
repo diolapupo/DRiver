@@ -1733,8 +1733,30 @@ extern __bank0 __bit __timeout;
 
 
 float battery_current, feedback_voltage;
+int pwm_freq = 5000;
 
- void startPWM1(float freq, int duty){
+unsigned char rv = 0;
+
+void __attribute__((picinterrupt(("")))) ISR(void)
+{
+    if(TMR0IF && TMR0IE){
+        rv=1;
+        TMR0IF = 0;
+    }
+
+}
+void regulate_voltage()
+{
+    if(rv){
+        if(feedback_voltage < 12){
+                pwm_freq += 1000;
+            }else if(feedback_voltage > 12){
+                pwm_freq -= 1000;
+        }
+        rv = 0;
+    }
+}
+void startPWM1(float freq, int duty){
         CCP1CON = 0x0F;
         float periodt = 1.0/freq;
         PR2 = (periodt * 20000000) / 16 - 1;
@@ -1749,9 +1771,9 @@ float battery_current, feedback_voltage;
         TMR2ON = 1;
     }
  int readADC(char ADCpin){
-     CHS0 = ADCpin & 001;
-     CHS1 = ADCpin & 010;
-     CHS2 = ADCpin & 100;
+     CHS0 = ADCpin & 0b001;
+     CHS1 = ADCpin & 0b010;
+     CHS2 = ADCpin & 0b100;
      ADON = 1;
      _delay((unsigned long)((40)*(20000000/4000000.0)));
      GO_nDONE = 1;
@@ -1766,20 +1788,17 @@ void main(void) {
     ADCON1 = 0b01000010;
     ADCS0 = 0;
     ADCS1 = 0;
-
-
+    OPTION_REG = 0b00000011;
+    GIE = 1;
+    PEIE = 1;
+    TMR0IE = 1;
     while(1){
-
-
-        startPWM1(5000, 90);
-        startPWM2(1000, 30);
+        regulate_voltage();
+        startPWM1(pwm_freq, 90);
+        startPWM2(pwm_freq, 30);
 
         battery_current = 0.00488 * readADC(1);
-        feedback_voltage =5.55* (0.00488 * readADC(2));
-
-
-
-
+        feedback_voltage =5.55 * (0.00488 * readADC(2));
 
     }
 

@@ -3,14 +3,20 @@
 [d edition pro ]
 [d chip 16F877A ]
 [d frameptr 0 ]
-"18 C:\Users\DAVID\MPLABXProjects\batch.X\batch.c
+"21 C:\Users\DAVID\MPLABXProjects\batch.X\batch.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+"29
+[v _regulate_voltage regulate_voltage `(v  1 e 1 0 ]
+"40
 [v _startPWM1 startPWM1 `(v  1 e 1 0 ]
-"25
+"47
 [v _startPWM2 startPWM2 `(v  1 e 1 0 ]
-"32
+"54
 [v _readADC readADC `(i  1 e 2 0 ]
-"44
+"66
 [v _main main `(v  1 e 1 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
 "43 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\sprcadd.c
@@ -30,6 +36,10 @@
 "16 C:\Users\DAVID\MPLABXProjects\batch.X\batch.c
 [v _battery_current battery_current `f  1 e 4 0 ]
 [v _feedback_voltage feedback_voltage `f  1 e 4 0 ]
+"17
+[v _pwm_freq pwm_freq `i  1 e 2 0 ]
+"19
+[v _rv rv `uc  1 e 1 0 ]
 "892 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
 "906
@@ -40,6 +50,8 @@
 [v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
 "1152
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1255
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
 "1816
 [v _PR2 PR2 `VEuc  1 e 1 @146 ]
 "2222
@@ -58,38 +70,46 @@
 [v _CHS1 CHS1 `VEb  1 e 0 @252 ]
 "2488
 [v _CHS2 CHS2 `VEb  1 e 0 @253 ]
+"2569
+[v _GIE GIE `VEb  1 e 0 @95 ]
 "2578
 [v _GO_nDONE GO_nDONE `VEb  1 e 0 @250 ]
+"2629
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"2878
+[v _TMR0IE TMR0IE `VEb  1 e 0 @93 ]
+"2881
+[v _TMR0IF TMR0IF `VEb  1 e 0 @90 ]
 "2902
 [v _TMR2ON TMR2ON `VEb  1 e 0 @146 ]
 "2962
 [v _TRISC1 TRISC1 `VEb  1 e 0 @1081 ]
 "2965
 [v _TRISC2 TRISC2 `VEb  1 e 0 @1082 ]
-"44 C:\Users\DAVID\MPLABXProjects\batch.X\batch.c
+"66 C:\Users\DAVID\MPLABXProjects\batch.X\batch.c
 [v _main main `(v  1 e 1 0 ]
 {
-"68
+"87
 } 0
-"25
+"47
 [v _startPWM2 startPWM2 `(v  1 e 1 0 ]
 {
-"27
-[v startPWM2@periodt periodt `f  1 a 4 19 ]
-"25
-[v startPWM2@freq freq `f  1 p 4 13 ]
-[v startPWM2@duty duty `i  1 p 2 17 ]
-"31
+"49
+[v startPWM2@periodt periodt `f  1 a 4 23 ]
+"47
+[v startPWM2@freq freq `f  1 p 4 17 ]
+[v startPWM2@duty duty `i  1 p 2 21 ]
+"53
 } 0
-"18
+"40
 [v _startPWM1 startPWM1 `(v  1 e 1 0 ]
 {
-"20
-[v startPWM1@periodt periodt `f  1 a 4 19 ]
-"18
-[v startPWM1@freq freq `f  1 p 4 13 ]
-[v startPWM1@duty duty `i  1 p 2 17 ]
-"24
+"42
+[v startPWM1@periodt periodt `f  1 a 4 23 ]
+"40
+[v startPWM1@freq freq `f  1 p 4 17 ]
+[v startPWM1@duty duty `i  1 p 2 21 ]
+"46
 } 0
 "43 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
@@ -98,32 +118,32 @@
 [v ___fltol@exp1 exp1 `uc  1 a 1 79 ]
 [v ___fltol@sign1 sign1 `uc  1 a 1 78 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 4 ]
+[v ___fltol@f1 f1 `d  1 p 4 8 ]
 "70
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S361 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S375 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S366 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S369 . 4 `l 1 i 4 0 `d 1 f 4 0 `S361 1 fAsBytes 4 0 `S366 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S369  1 a 4 30 ]
+[s S380 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S383 . 4 `l 1 i 4 0 `d 1 f 4 0 `S375 1 fAsBytes 4 0 `S380 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S383  1 a 4 34 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 24 ]
-[s S438 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 28 ]
+[s S452 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S441 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S438 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S441  1 a 2 34 ]
+[u S455 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S452 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S455  1 a 2 38 ]
 "10
-[v ___flmul@bexp bexp `uc  1 a 1 29 ]
+[v ___flmul@bexp bexp `uc  1 a 1 33 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 28 ]
+[v ___flmul@aexp aexp `uc  1 a 1 32 ]
 "9
-[v ___flmul@sign sign `uc  1 a 1 23 ]
+[v ___flmul@sign sign `uc  1 a 1 27 ]
 "8
-[v ___flmul@b b `d  1 p 4 10 ]
-[v ___flmul@a a `d  1 p 4 14 ]
+[v ___flmul@b b `d  1 p 4 14 ]
+[v ___flmul@a a `d  1 p 4 18 ]
 "205
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\Umul8_16.c
@@ -131,74 +151,91 @@
 {
 [v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
 "6
-[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 8 ]
 "5
-[v __Umul8_16@product product `ui  1 a 2 4 ]
+[v __Umul8_16@product product `ui  1 a 2 6 ]
 "4
 [v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
-[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 2 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 10 ]
 "60
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
-[v ___fldiv@grs grs `ul  1 a 4 56 ]
+[v ___fldiv@grs grs `ul  1 a 4 60 ]
 "22
-[v ___fldiv@rem rem `ul  1 a 4 49 ]
+[v ___fldiv@rem rem `ul  1 a 4 53 ]
 "20
-[v ___fldiv@new_exp new_exp `i  1 a 2 54 ]
+[v ___fldiv@new_exp new_exp `i  1 a 2 58 ]
 "19
-[v ___fldiv@aexp aexp `uc  1 a 1 61 ]
+[v ___fldiv@aexp aexp `uc  1 a 1 65 ]
 "18
-[v ___fldiv@bexp bexp `uc  1 a 1 60 ]
+[v ___fldiv@bexp bexp `uc  1 a 1 64 ]
 "16
-[v ___fldiv@sign sign `uc  1 a 1 53 ]
+[v ___fldiv@sign sign `uc  1 a 1 57 ]
 "8
-[v ___fldiv@a a `d  1 p 4 36 ]
-[v ___fldiv@b b `d  1 p 4 40 ]
+[v ___fldiv@a a `d  1 p 4 40 ]
+[v ___fldiv@b b `d  1 p 4 44 ]
 "185
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
-[v ___fladd@grs grs `uc  1 a 1 3 ]
+[v ___fladd@grs grs `uc  1 a 1 77 ]
 "15
-[v ___fladd@bexp bexp `uc  1 a 1 2 ]
+[v ___fladd@bexp bexp `uc  1 a 1 76 ]
 "16
-[v ___fladd@aexp aexp `uc  1 a 1 1 ]
+[v ___fladd@aexp aexp `uc  1 a 1 75 ]
 "13
-[v ___fladd@signs signs `uc  1 a 1 0 ]
+[v ___fladd@signs signs `uc  1 a 1 74 ]
 "10
-[v ___fladd@b b `d  1 p 4 62 ]
-[v ___fladd@a a `d  1 p 4 66 ]
+[v ___fladd@b b `d  1 p 4 66 ]
+[v ___fladd@a a `d  1 p 4 70 ]
 "237
 } 0
-"32 C:\Users\DAVID\MPLABXProjects\batch.X\batch.c
+"29 C:\Users\DAVID\MPLABXProjects\batch.X\batch.c
+[v _regulate_voltage regulate_voltage `(v  1 e 1 0 ]
+{
+"39
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 2 ]
+[v ___flge@ff2 ff2 `d  1 p 4 6 ]
+"19
+} 0
+"54 C:\Users\DAVID\MPLABXProjects\batch.X\batch.c
 [v _readADC readADC `(i  1 e 2 0 ]
 {
 [v readADC@ADCpin ADCpin `uc  1 a 1 wreg ]
-"41
-[v readADC@res res `i  1 a 2 6 ]
-"32
+"63
+[v readADC@res res `i  1 a 2 8 ]
+"54
 [v readADC@ADCpin ADCpin `uc  1 a 1 wreg ]
-[v readADC@ADCpin ADCpin `uc  1 a 1 8 ]
-"43
+[v readADC@ADCpin ADCpin `uc  1 a 1 10 ]
+"65
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
 "13
-[v ___xxtofl@arg arg `ul  1 a 4 6 ]
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
 "12
-[v ___xxtofl@exp exp `uc  1 a 1 5 ]
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
 "10
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 9 ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
 "15
-[v ___xxtofl@sign sign `uc  1 a 1 4 ]
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
 "44
+} 0
+"21 C:\Users\DAVID\MPLABXProjects\batch.X\batch.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"28
 } 0

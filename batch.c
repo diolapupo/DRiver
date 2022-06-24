@@ -14,8 +14,30 @@
 #define FEEDBACK_VOLTAGE 2
 
 float battery_current, feedback_voltage;
+int pwm_freq = 5000;
 
- void startPWM1(float freq, int duty){
+unsigned char rv = 0;
+
+void __interrupt() ISR(void)
+{
+    if(TMR0IF && TMR0IE){   ///interrupt for checking feedback voltage value
+        rv=1; 
+        TMR0IF = 0;
+    }
+
+} 
+void regulate_voltage()
+{
+    if(rv){
+        if(feedback_voltage < 12){
+                pwm_freq += 1000; 
+            }else if(feedback_voltage > 12){
+                pwm_freq -= 1000;
+        }
+        rv = 0;
+    }
+}
+void startPWM1(float freq, int duty){
         CCP1CON = 0x0F;
         float periodt = 1.0/freq;
         PR2 = (periodt * _XTAL_FREQ) / 16 - 1;
@@ -30,9 +52,9 @@ float battery_current, feedback_voltage;
         TMR2ON = 1;
     }
  int readADC(char ADCpin){
-     CHS0 = ADCpin & 001;
-     CHS1 = ADCpin & 010;
-     CHS2 = ADCpin & 100;
+     CHS0 = ADCpin & 0b001;
+     CHS1 = ADCpin & 0b010;
+     CHS2 = ADCpin & 0b100;
      ADON = 1;
      __delay_us(40);
      GO_nDONE = 1;
@@ -41,27 +63,29 @@ float battery_current, feedback_voltage;
     int res =  ADRESL + 128* ADRESH;
     return res;
  }
+ 
+ void readvalues(void){
+  battery_current = 0.00488 * readADC(BAT_CURRENT);
+  feedback_voltage =5.55 * (0.00488 * readADC(FEEDBACK_VOLTAGE));
+ }
 void main(void) {
     TRISC1 = 0;
     TRISC2 = 0;
     ADCON1 = 0b01000010;   // FOSC/4, left justified, RA0-RA4 are analog rest are digital pins
     ADCS0 = 0;// FOSC/4
     ADCS1 = 0;// FOSC/4
-    
-    
+    OPTION_REG = 0b00000011;
+    GIE = 1;
+    PEIE = 1;
+    TMR0IE = 1;
+    startPWM1(pwm_freq, 90);
+    startPWM2(pwm_freq, 30);
     while(1){
-        
-        // 
-        startPWM1(5000, 90);
-        startPWM2(1000, 30);
+        regulate_voltage();
+        readvalues();
         /// read ADC values
-        battery_current = 0.00488 * readADC(BAT_CURRENT);
-        feedback_voltage =5.55* (0.00488 * readADC(FEEDBACK_VOLTAGE));
-     /*  if(feedback_voltage < 12){
-        
-        }else if(feedback_voltage > 12){
-        
-        }*/
+       
+     
     }
     
     return;

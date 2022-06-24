@@ -1,5 +1,13 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"906 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"2881 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2881: extern volatile __bit TMR0IF __attribute__((address(0x5A)));
+[v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
+"2878
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2878: extern volatile __bit TMR0IE __attribute__((address(0x5D)));
+[v _TMR0IE `Vb ~T0 @X0 0 e@93 ]
+"906
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 906: extern volatile unsigned char CCP1CON __attribute__((address(0x017)));
 [v _CCP1CON `Vuc ~T0 @X0 0 e@23 ]
 "1816
@@ -58,6 +66,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2386
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2386: extern volatile __bit ADCS1 __attribute__((address(0xFF)));
 [v _ADCS1 `Vb ~T0 @X0 0 e@255 ]
+"1255
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 1255: extern volatile unsigned char OPTION_REG __attribute__((address(0x081)));
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
+"2569
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2569: extern volatile __bit GIE __attribute__((address(0x5F)));
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"2629
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2629: extern volatile __bit PEIE __attribute__((address(0x5E)));
+[v _PEIE `Vb ~T0 @X0 0 e@94 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -245,173 +262,268 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;batch.c: 4: float battery_current, feedback_voltage;
 [p x WDTE  =  OFF        ]
 "5
-[; ;batch.c: 5: 
+[; ;batch.c: 5: int pwm_freq = 5000;
 [p x PWRTE  =  OFF       ]
 "6
-[; ;batch.c: 6:  void startPWM1(float freq, int duty){
+[; ;batch.c: 6: 
 [p x BOREN  =  OFF      ]
 "7
-[; ;batch.c: 7:         CCP1CON = 0x0F;
+[; ;batch.c: 7: unsigned char rv = 0;
 [p x LVP  =  OFF         ]
 "8
-[; ;batch.c: 8:         float periodt = 1.0/freq;
+[; ;batch.c: 8: 
 [p x CPD  =  OFF         ]
 "9
-[; ;batch.c: 9:         PR2 = (periodt * 20000000) / 16 - 1;
+[; ;batch.c: 9: void __attribute__((picinterrupt(("")))) ISR(void)
 [p x WRT  =  OFF          ]
 "10
-[; ;batch.c: 10:         CCPR1L = duty;
+[; ;batch.c: 10: {
 [p x CP  =  OFF    ]
 "16
-[; ;batch.c: 16:         PR2 = (periodt * 20000000) / 16 - 1;
+[; ;batch.c: 16: }
 [v _battery_current `f ~T0 @X0 1 e ]
 [v _feedback_voltage `f ~T0 @X0 1 e ]
-"18
-[; ;batch.c: 18:         TMR2ON = 1;
+"17
+[; ;batch.c: 17: void regulate_voltage()
+[v _pwm_freq `i ~T0 @X0 1 e ]
+[i _pwm_freq
+-> 5000 `i
+]
+"19
+[; ;batch.c: 19:     if(rv){
+[v _rv `uc ~T0 @X0 1 e ]
+[i _rv
+-> -> 0 `i `uc
+]
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"21
+[; ;batch.c: 21:                 pwm_freq += 1000;
+[v _ISR `(v ~T1 @X0 1 ef ]
+"22
+[; ;batch.c: 22:             }else if(feedback_voltage > 12){
+{
+[e :U _ISR ]
+[f ]
+"23
+[; ;batch.c: 23:                 pwm_freq -= 1000;
+[e $ ! && _TMR0IF _TMR0IE 96  ]
+{
+"24
+[; ;batch.c: 24:         }
+[e = _rv -> -> 1 `i `uc ]
+"25
+[; ;batch.c: 25:         rv = 0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"26
+[; ;batch.c: 26:     }
+}
+[e :U 96 ]
+"28
+[; ;batch.c: 28: void startPWM1(float freq, int duty){
+[e :UE 95 ]
+}
+"29
+[; ;batch.c: 29:         CCP1CON = 0x0F;
+[v _regulate_voltage `(v ~T0 @X0 1 ef ]
+"30
+[; ;batch.c: 30:         float periodt = 1.0/freq;
+{
+[e :U _regulate_voltage ]
+[f ]
+"31
+[; ;batch.c: 31:         PR2 = (periodt * 20000000) / 16 - 1;
+[e $ ! != -> _rv `i -> 0 `i 98  ]
+{
+"32
+[; ;batch.c: 32:         CCPR1L = duty;
+[e $ ! < _feedback_voltage -> -> 12 `i `f 99  ]
+{
+"33
+[; ;batch.c: 33:         TMR2ON = 1;
+[e =+ _pwm_freq -> 1000 `i ]
+"34
+[; ;batch.c: 34:     }
+}
+[e $U 100  ]
+[e :U 99 ]
+[e $ ! > _feedback_voltage -> -> 12 `i `f 101  ]
+{
+"35
+[; ;batch.c: 35:  void startPWM2(float freq, int duty){
+[e =- _pwm_freq -> 1000 `i ]
+"36
+[; ;batch.c: 36:         CCP2CON = 0x0F;
+}
+[e :U 101 ]
+[e :U 100 ]
+"37
+[; ;batch.c: 37:         float periodt = 1.0/freq;
+[e = _rv -> -> 0 `i `uc ]
+"38
+[; ;batch.c: 38:         PR2 = (periodt * 20000000) / 16 - 1;
+}
+[e :U 98 ]
+"39
+[; ;batch.c: 39:         CCPR2L = duty;
+[e :UE 97 ]
+}
+"40
+[; ;batch.c: 40:         TMR2ON = 1;
 [v _startPWM1 `(v ~T0 @X0 1 ef2`f`i ]
 {
 [e :U _startPWM1 ]
 [v _freq `f ~T0 @X0 1 r1 ]
 [v _duty `i ~T0 @X0 1 r2 ]
 [f ]
-"19
-[; ;batch.c: 19:     }
+"41
+[; ;batch.c: 41:     }
 [e = _CCP1CON -> -> 15 `i `uc ]
-"20
-[; ;batch.c: 20:  int readADC(char ADCpin){
+"42
+[; ;batch.c: 42:  int readADC(char ADCpin){
 [v _periodt `f ~T0 @X0 1 a ]
 [e = _periodt -> / .1.0 -> _freq `d `f ]
-"21
-[; ;batch.c: 21:      CHS0 = ADCpin & 001;
+"43
+[; ;batch.c: 43:      CHS0 = ADCpin & 0b001;
 [e = _PR2 -> - / * _periodt -> -> 20000000 `l `f -> -> 16 `i `f -> -> 1 `i `f `uc ]
-"22
-[; ;batch.c: 22:      CHS1 = ADCpin & 010;
+"44
+[; ;batch.c: 44:      CHS1 = ADCpin & 0b010;
 [e = _CCPR1L -> _duty `uc ]
-"23
-[; ;batch.c: 23:      CHS2 = ADCpin & 100;
+"45
+[; ;batch.c: 45:      CHS2 = ADCpin & 0b100;
 [e = _TMR2ON -> -> 1 `i `b ]
-"24
-[; ;batch.c: 24:      ADON = 1;
-[e :UE 95 ]
+"46
+[; ;batch.c: 46:      ADON = 1;
+[e :UE 102 ]
 }
-"25
-[; ;batch.c: 25:      _delay((unsigned long)((40)*(20000000/4000000.0)));
+"47
+[; ;batch.c: 47:      _delay((unsigned long)((40)*(20000000/4000000.0)));
 [v _startPWM2 `(v ~T0 @X0 1 ef2`f`i ]
 {
 [e :U _startPWM2 ]
 [v _freq `f ~T0 @X0 1 r1 ]
 [v _duty `i ~T0 @X0 1 r2 ]
 [f ]
-"26
-[; ;batch.c: 26:      GO_nDONE = 1;
+"48
+[; ;batch.c: 48:      GO_nDONE = 1;
 [e = _CCP2CON -> -> 15 `i `uc ]
-"27
-[; ;batch.c: 27:      while(GO_nDONE);
+"49
+[; ;batch.c: 49:      while(GO_nDONE);
 [v _periodt `f ~T0 @X0 1 a ]
 [e = _periodt -> / .1.0 -> _freq `d `f ]
-"28
-[; ;batch.c: 28:      ADON = 0;
+"50
+[; ;batch.c: 50:      ADON = 0;
 [e = _PR2 -> - / * _periodt -> -> 20000000 `l `f -> -> 16 `i `f -> -> 1 `i `f `uc ]
-"29
-[; ;batch.c: 29:     int res = ADRESL + 128* ADRESH;
+"51
+[; ;batch.c: 51:     int res = ADRESL + 128* ADRESH;
 [e = _CCPR2L -> _duty `uc ]
-"30
-[; ;batch.c: 30:     return res;
+"52
+[; ;batch.c: 52:     return res;
 [e = _TMR2ON -> -> 1 `i `b ]
-"31
-[; ;batch.c: 31:  }
-[e :UE 96 ]
+"53
+[; ;batch.c: 53:  }
+[e :UE 103 ]
 }
-"32
-[; ;batch.c: 32: void main(void) {
+"54
+[; ;batch.c: 54: void main(void) {
 [v _readADC `(i ~T0 @X0 1 ef1`uc ]
 {
 [e :U _readADC ]
 [v _ADCpin `uc ~T0 @X0 1 r1 ]
 [f ]
-"33
-[; ;batch.c: 33:     TRISC1 = 0;
+"55
+[; ;batch.c: 55:     TRISC1 = 0;
 [e = _CHS0 -> & -> _ADCpin `i -> 1 `i `b ]
-"34
-[; ;batch.c: 34:     TRISC2 = 0;
-[e = _CHS1 -> & -> _ADCpin `i -> 8 `i `b ]
-"35
-[; ;batch.c: 35:     ADCON1 = 0b01000010;
-[e = _CHS2 -> & -> _ADCpin `i -> 100 `i `b ]
-"36
-[; ;batch.c: 36:     ADCS0 = 0;
+"56
+[; ;batch.c: 56:     TRISC2 = 0;
+[e = _CHS1 -> & -> _ADCpin `i -> 2 `i `b ]
+"57
+[; ;batch.c: 57:     ADCON1 = 0b01000010;
+[e = _CHS2 -> & -> _ADCpin `i -> 4 `i `b ]
+"58
+[; ;batch.c: 58:     ADCS0 = 0;
 [e = _ADON -> -> 1 `i `b ]
-"37
-[; ;batch.c: 37:     ADCS1 = 0;
+"59
+[; ;batch.c: 59:     ADCS1 = 0;
 [e ( __delay (1 -> * -> -> 40 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
-"38
-[; ;batch.c: 38: 
+"60
+[; ;batch.c: 60:     OPTION_REG = 0b00000011;
 [e = _GO_nDONE -> -> 1 `i `b ]
-"39
-[; ;batch.c: 39: 
-[e $U 98  ]
-[e :U 99 ]
-[e :U 98 ]
-[e $ _GO_nDONE 99  ]
-[e :U 100 ]
-"40
-[; ;batch.c: 40:     while(1){
+"61
+[; ;batch.c: 61:     GIE = 1;
+[e $U 105  ]
+[e :U 106 ]
+[e :U 105 ]
+[e $ _GO_nDONE 106  ]
+[e :U 107 ]
+"62
+[; ;batch.c: 62:     PEIE = 1;
 [e = _ADON -> -> 0 `i `b ]
-"41
-[; ;batch.c: 41: 
+"63
+[; ;batch.c: 63:     TMR0IE = 1;
 [v _res `i ~T0 @X0 1 a ]
 [e = _res + -> _ADRESL `i * -> 128 `i -> _ADRESH `i ]
-"42
-[; ;batch.c: 42: 
+"64
+[; ;batch.c: 64:     while(1){
 [e ) _res ]
-[e $UE 97  ]
-"43
-[; ;batch.c: 43:         startPWM1(5000, 90);
-[e :UE 97 ]
+[e $UE 104  ]
+"65
+[; ;batch.c: 65:         regulate_voltage();
+[e :UE 104 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"44
-[; ;batch.c: 44:         startPWM2(1000, 30);
+"66
+[; ;batch.c: 66:         startPWM1(pwm_freq, 90);
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"45
-[; ;batch.c: 45: 
-[e = _TRISC1 -> -> 0 `i `b ]
-"46
-[; ;batch.c: 46:         battery_current = 0.00488 * readADC(1);
-[e = _TRISC2 -> -> 0 `i `b ]
-"47
-[; ;batch.c: 47:         feedback_voltage =5.55* (0.00488 * readADC(2));
-[e = _ADCON1 -> -> 66 `i `uc ]
-"48
-[; ;batch.c: 48: 
-[e = _ADCS0 -> -> 0 `i `b ]
-"49
-[; ;batch.c: 49: 
-[e = _ADCS1 -> -> 0 `i `b ]
-"52
-[; ;batch.c: 52: 
-[e :U 103 ]
-{
-"55
-[; ;batch.c: 55:     return;
-[e ( _startPWM1 (2 , -> -> 5000 `i `f -> 90 `i ]
-"56
-[; ;batch.c: 56: }
-[e ( _startPWM2 (2 , -> -> 1000 `i `f -> 30 `i ]
-"58
-[e = _battery_current -> * .0.00488 -> ( _readADC (1 -> -> 1 `i `uc `d `f ]
-"59
-[e = _feedback_voltage -> * .5.55 * .0.00488 -> ( _readADC (1 -> -> 2 `i `uc `d `f ]
-"65
-}
-[e :U 102 ]
-[e $U 103  ]
-[e :U 104 ]
 "67
-[e $UE 101  ]
+[; ;batch.c: 67:         startPWM2(pwm_freq, 30);
+[e = _TRISC1 -> -> 0 `i `b ]
 "68
-[e :UE 101 ]
+[; ;batch.c: 68: 
+[e = _TRISC2 -> -> 0 `i `b ]
+"69
+[; ;batch.c: 69:         battery_current = 0.00488 * readADC(1);
+[e = _ADCON1 -> -> 66 `i `uc ]
+"70
+[; ;batch.c: 70:         feedback_voltage =5.55 * (0.00488 * readADC(2));
+[e = _ADCS0 -> -> 0 `i `b ]
+"71
+[; ;batch.c: 71: 
+[e = _ADCS1 -> -> 0 `i `b ]
+"72
+[; ;batch.c: 72:     }
+[e = _OPTION_REG -> -> 3 `i `uc ]
+"73
+[; ;batch.c: 73: 
+[e = _GIE -> -> 1 `i `b ]
+"74
+[; ;batch.c: 74:     return;
+[e = _PEIE -> -> 1 `i `b ]
+"75
+[; ;batch.c: 75: }
+[e = _TMR0IE -> -> 1 `i `b ]
+"76
+[e :U 110 ]
+{
+"77
+[e ( _regulate_voltage ..  ]
+"78
+[e ( _startPWM1 (2 , -> _pwm_freq `f -> 90 `i ]
+"79
+[e ( _startPWM2 (2 , -> _pwm_freq `f -> 30 `i ]
+"81
+[e = _battery_current -> * .0.00488 -> ( _readADC (1 -> -> 1 `i `uc `d `f ]
+"82
+[e = _feedback_voltage -> * .5.55 * .0.00488 -> ( _readADC (1 -> -> 2 `i `uc `d `f ]
+"84
+}
+[e :U 109 ]
+[e $U 110  ]
+[e :U 111 ]
+"86
+[e $UE 108  ]
+"87
+[e :UE 108 ]
 }
