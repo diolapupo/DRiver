@@ -52,9 +52,7 @@ void startPWM1(float freq, int duty){
         TMR2ON = 1;
     }
  int readADC(char ADCpin){
-     CHS0 = ADCpin & 0b001;
-     CHS1 = ADCpin & 0b010;
-     CHS2 = ADCpin & 0b100;
+     ADCON0bits.CHS = ADCpin;
      ADON = 1;
      __delay_us(40);
      GO_nDONE = 1;
@@ -84,8 +82,6 @@ void main(void) {
         regulate_voltage();
         readvalues();
         /// read ADC values
-       
-     
     }
     
     return;
